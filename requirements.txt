@@ -1,0 +1,7 @@
+geopandas>=0.10
+mgwr>=2.1.2
+rasterio>=1.2
+fiona>=1.8
+shapely>=1.7
+pyproj>=3.0
+libpysal>=4.5

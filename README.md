@@ -48,16 +48,13 @@ All processing was done using Python and GIS software (ArcGIS Pro), with model r
 
 #### How to Reproduce
 
-- Clone this repository and install dependencies via pip or conda
+This project was developed in Google Colab Pro. To run the notebooks:
 
-		# Using pip
-			pip install -r requirements.txt
+1. Open any `.ipynb` file in `/notebooks/` in Google Colab
+2. Install dependencies in the first cell:
 
-		# Using conda
-			conda env create -f environment.yml
-			conda activate heatmodel
-
-- Then open and run the notebooks in sequence from /notebooks/
+```python
+!pip install geopandas mgwr rasterio fiona shapely pyproj
 
 
 ##### Data Sources
