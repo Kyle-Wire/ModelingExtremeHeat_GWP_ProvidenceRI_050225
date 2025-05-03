@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Modeling Extreme Heat Vulnerability in Providence, RI"
+authors:
+  - family-names: Wire
+    given-names: Kyle
+    orcid: "0009-0004-4496-2372"  # Replace this with your real ORCID if you have one
+date-released: 2025-05-02
+version: "1.0.0"
+repository-code: https://github.com/Kyle-Wire/ModelingExtremeHeat_GWP_ProvidenceRI_050225
+license: MIT
+keywords:
+  - heat modeling
+  - urban climate
+  - geographically weighted regression
+  - PCA
+  - spatial analysis
+  - vulnerability mapping
