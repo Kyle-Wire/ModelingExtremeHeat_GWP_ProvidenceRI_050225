@@ -63,6 +63,8 @@ This project was developed in Google Colab Pro. To run the notebooks:
 - Tree Canopy Cover: USGS NLCD (2020)
 - Elevation (DEM): City of Providence Open Data Portal
 - Urban Form Data: City of Providence Open Data Portal
+- Green Spaces: City of Providence Open Data Portal & Rhode Island GIS Hub
+- Water Bodies:City of Providence Open Data Portal & Rhode Island GIS Hub
 
 All intersected an processed datasets used in modeling are included in the /data/processed/ folder
 
