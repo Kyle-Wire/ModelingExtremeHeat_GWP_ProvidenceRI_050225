@@ -7,8 +7,8 @@ authors:
     orcid: "0009-0004-4496-2372"
 date-released: 2025-05-30
 version: "1.0.0"
-repository-code: https://github.com/Kyle-Wire/ModelingExtremeHeat_GWP_ProvidenceRI_050225
-license: MIT
+repository-code: https://github.com/Kyle-Wire/SPARC
+license: Creative Commons Attribution-NonCommercial 4.0 International Public License
 keywords:
   - urban heat island
   - spatial machine learning

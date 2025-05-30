@@ -1,4 +1,4 @@
-# Modeling Extreme Heat Vulnerability in Providence, RI
+SPARC: Spatial Prediction and Residual Correction
 
 This repository contains the full spatial analysis, datasets, and code used in the project:
 
@@ -113,7 +113,7 @@ Please cite this repository as:
   author       = {Kyle Wire},
   title        = {Modeling Extreme Heat Vulnerability in Providence, RI},
   year         = {2025},
-  howpublished = {\url{https://github.com/Kyle-Wire/ModelingExtremeHeat_GWP_ProvidenceRI_050225}},
+  howpublished = {\url{https://github.com/Kyle-Wire/SPARC}},
   note         = {Geographically Weighted Modeling, Ensemble Learning, Urban Heat Forecasting}
 }
 

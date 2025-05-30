@@ -10,7 +10,7 @@ Please read the following guidelines before submitting an issue, suggestion, or 
 
 ### 1. Issues and Suggestions
 If you find bugs, data errors, or have questions:
-- Open an [Issue](https://github.com/Kyle-Wire/ModelingExtremeHeat_GWP_ProvidenceRI_050225/issues)
+- Open an [Issue] (https://github.com/Kyle-Wire/SPARC)
 - Be clear, specific, and respectful
 - Include screenshots or outputs if possible
 
@@ -25,7 +25,6 @@ Please:
 - Create a branch from `main`
 - Keep changes minimal and clearly documented
 
-Unsolicited model rewrites, “AI integrations,” or format changes will be closed with minimal ceremony.
 
 ---
 
