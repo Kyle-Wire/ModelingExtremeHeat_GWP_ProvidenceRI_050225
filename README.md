@@ -1,4 +1,4 @@
-SPARC: Spatial Prediction and Residual Correction
+## SPARC: Spatial Prediction and Residual Correction
 
 This repository contains the full spatial analysis, datasets, and code used in the project:
 
