@@ -1,14 +1,39 @@
 # Modeling Extreme Heat Vulnerability in Providence, RI
 
-This repository contains the full spatial analysis, datasets, and code used in the project: 
- 
-**"Modeling Extreme Heat Vulnerability in Providence, Rhode Island: A Multi-Scale Spatial Analysis Around Brown University."**
+This repository contains the full spatial analysis, datasets, and code used in the project:
 
-This study develops a fine-scale spatial model of ambient air temperature (AAT) during extreme heat events, using a 30-meter analysis grid over Providence, Rhode Island. The project combines:
+"Modeling Extreme Heat Vulnerability in Providence, Rhode Island: A Multi-Stage Spatial Ensemble for Urban Climate Planning."
 
-- Principal Component Analysis (PCA) to reduce multicollinearity across urban form variables
-- Geographically Weighted Regression (GWR) to model spatially varying relationships between land surface characteristics and temperature
-- Bootstrapping to evaluate model uncertainty and local coefficient stability
+This study develops a fine-scale ensemble model of ambient air temperature (AAT) during extreme heat events, using a 30-meter grid across Providence, Rhode Island. The framework integrates spatial statistics, machine learning, and deep learning for high-resolution urban climate forecasting.
+
+Core Methods
+--OLS Regression: Baseline global model for urban heat prediction
+
+--Geographically Weighted Elastic Net (GWEN): Spatially adaptive variable selection
+
+--Laplacian Eigenmaps: Spectral spatial features capturing multiscale spatial autocorrelation
+
+Base Models:
+
+--Geographically Weighted Regression (GWR)
+
+--Geographically Weighted Random Forest (GWRF)
+
+--Gaussian Process Generalized Additive Model with Spatially Varying Coefficients (GGP-GAM-SVC)
+
+Meta-Ensemble:
+
+--LightGBM stacking of out-of-fold base model predictions
+
+Final Correction:
+
+--Deep Kriging (Neural Network residual spatial correction)
+
+Validation:
+
+--Spatial Cross-Validation
+
+--Residual diagnostics (Moran’s I, histograms)
 
 It was developed as part of climate resilience planning efforts for urban environments and is openly published for use, critique, or expansion.
 
@@ -19,16 +44,15 @@ It was developed as part of climate resilience planning efforts for urban enviro
 ```text
 .
 ├── data/
-│   ├── raw/               # Intersected shapefiles: tree canopy, impervious surface, DEM, etc.
-│   ├── processed/         # Grid-level AAT dataset, PCA results, GWR bootstraps
-├── notebooks/             # Python notebooks for GWR & bootstrapping
+│   ├── raw/               # Shapefiles: tree canopy, impervious surface, DEM, etc.
+│   ├── processed/         # Model performance and predictions
+├── notebooks/             # Python & R notebooks for Ensemble
 ├── outputs/
 │   ├── figures/           # Coefficient maps, residuals, graphical abstract
-│   ├── tables/            # Summary statistics and model output CSVs
+│   ├── tables/            # Tables from paper
 ├── README.md              # The document that you're reading this in. Hope you know that!
 ├── LICENSE                # MIT License
 ├── requirements.txt       # Python package dependencies
-├── environment.yml        # (optional) Conda environment configuration
 ├── CONTRIBUTING.md        # Guidelines for contributing or reproducing the work
 ├── CITATION.cff           # Citation metadata for this repository
 
@@ -48,13 +72,14 @@ All processing was done using Python and GIS software (ArcGIS Pro), with model r
 
 #### How to Reproduce
 
-This project was developed in Google Colab Pro. To run the notebooks:
+This project was developed in Visual Studio Code. To run the notebooks:
 
-1. Open any `.ipynb` file in `/notebooks/` in Google Colab
+1. Open any `.py` file in `/notebooks/` in VS Code
 2. Install dependencies in the first cell:
 
 ```python
-!pip install geopandas mgwr rasterio fiona shapely pyproj
+!pip install pandas numpy geopandas scikit-learn shap lightgbm tensorflow keras libpysal esda mgwr matplotlib
+
 
 
 ##### Data Sources
@@ -64,19 +89,19 @@ This project was developed in Google Colab Pro. To run the notebooks:
 - Elevation (DEM): City of Providence Open Data Portal
 - Urban Form Data: City of Providence Open Data Portal
 - Green Spaces: City of Providence Open Data Portal & Rhode Island GIS Hub
-- Water Bodies:City of Providence Open Data Portal & Rhode Island GIS Hub
+- Water Bodies: City of Providence Open Data Portal & Rhode Island GIS Hub
 
 All intersected an processed datasets used in modeling are included in the /data/processed/ folder
 
 
 ###### License
 
-This repository is published under the MIT license. See LICENSE for details
+"This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 License."
 
 
 ###### Acknowledgments
 
-Special thanks to Carolyn, Xana, and Reynolds, who supported this work in ways beyond measure.
+Special thanks to Carolyn, Xana, and Reynolds, who supported this work in ways beyond modeling capabilities.
 This model was developed independently by Kyle Wire and builds upon climate planning research conducted for Brown University.
 
 
@@ -87,9 +112,10 @@ Please cite this repository as:
 @misc{wire2025heat,
   author       = {Kyle Wire},
   title        = {Modeling Extreme Heat Vulnerability in Providence, RI},
-  year         = 2025,
+  year         = {2025},
   howpublished = {\url{https://github.com/Kyle-Wire/ModelingExtremeHeat_GWP_ProvidenceRI_050225}},
-  note         = {Geographically Weighted Regression, PCA, Urban Climate Modeling}
+  note         = {Geographically Weighted Modeling, Ensemble Learning, Urban Heat Forecasting}
 }
+
 
 
