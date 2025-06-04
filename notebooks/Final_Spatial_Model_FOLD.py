@@ -4,11 +4,12 @@ import pandas as pd
 import geopandas as gpd
 import numpy as np
 import os
-import joblib # For saving scalers and models
+import joblib  # For saving scalers and models
 import tempfile
 import subprocess
 import time
-import matplotlib.pyplot as plt # For saving SHAP plot
+import matplotlib.pyplot as plt  # For saving SHAP plot
+import shutil
 
 # Preprocessing & Feature Engineering
 from sklearn.preprocessing import StandardScaler
@@ -69,7 +70,8 @@ K_FOR_LAPLACIAN_SWM = 10
 PREPPED_DATA_WITH_BASIS_PATH = os.path.join(OUTPUT_DIR, "data_prepped_with_laplacian_basis.gpkg")
 
 PATH_TO_GGPGAMSVC_R_SCRIPT = "Final_GGPGAM_Fold.r"
-R_EXECUTABLE = r"C:\Users\KWire\AppData\Local\Programs\R\R-4.5.0\bin\x64\R.exe"
+# Attempt to find the R executable automatically for cross-platform support
+R_EXECUTABLE = shutil.which("R") or r"C:\Users\KWire\AppData\Local\Programs\R\R-4.5.0\bin\x64\R.exe"
 KEEP_TEMP_PREDS_CSV_FOR_FIRST_R_FOLD = False
 
 gwr_oof_file = os.path.join(OUTPUT_DIR, "gwr_oof_predictions.csv")
