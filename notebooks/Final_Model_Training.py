@@ -17,6 +17,7 @@ import subprocess
 import json
 import matplotlib.pyplot as plt
 import tempfile
+import shutil
 
 # Preprocessing & Feature Engineering
 from sklearn.preprocessing import StandardScaler
@@ -90,8 +91,9 @@ GGPGAMSVC_PERFORMANCE_FULL_PATH = os.path.join(OUTPUT_DIR_FULL_MODEL, "ggpgamsvc
 GAM_PLOTS_DIR = os.path.join(OUTPUT_DIR_FULL_MODEL, "gam_final_plots")
 if not os.path.exists(GAM_PLOTS_DIR): os.makedirs(GAM_PLOTS_DIR)
 
-PATH_TO_GGPGAMSVC_R_FULL_SCRIPT = "Final_GGPGAM_Full.r" # Your R script for full data
-R_EXECUTABLE = r"C:\Users\KWire\AppData\Local\Programs\R\R-4.5.0\bin\x64\R.exe"
+PATH_TO_GGPGAMSVC_R_FULL_SCRIPT = "Final_GGPGAM_Full.r"  # R script for full data
+# Try to locate the R executable in the current environment for portability.
+R_EXECUTABLE = shutil.which("R") or r"C:\Users\KWire\AppData\Local\Programs\R\R-4.5.0\bin\x64\R.exe"
 
 BASE_PREDICTORS_SCALER_PATH = os.path.join(OUTPUT_DIR_FULL_MODEL, 'final_base_predictors_scaler.pkl')
 LGBM_META_MODEL_PATH = os.path.join(OUTPUT_DIR_FULL_MODEL, 'final_lgbm_meta_model_trained_all_data.pkl')

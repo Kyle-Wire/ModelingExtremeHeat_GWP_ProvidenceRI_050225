@@ -8,7 +8,8 @@ import joblib
 import subprocess
 import json
 import tensorflow as tf
-from keras.models import load_model # Using tensorflow.keras
+from keras.models import load_model  # Using tensorflow.keras
+import shutil
 from libpysal.weights import KNN as PysalKNN
 from scipy.sparse.csgraph import laplacian
 from scipy.sparse.linalg import eigsh
@@ -98,7 +99,8 @@ GWRF_KERNEL_TYPE = 'gaussian'
 
 # R Script for GGP-GAM-SVC Prediction
 PATH_TO_GGPGAMSVC_PREDICT_R_SCRIPT = "Final_GGPGAM_Predict.r"
-R_EXECUTABLE = r"C:\Users\KWire\AppData\Local\Programs\R\R-4.5.0\bin\x64\R.exe"
+# Locate the R executable automatically when possible for portability
+R_EXECUTABLE = shutil.which("R") or r"C:\Users\KWire\AppData\Local\Programs\R\R-4.5.0\bin\x64\R.exe"
 
 # --- Stage 1: Load All Pre-Trained Models and Scalers ---
 print(f"\n--- [1] Loading Pre-Trained Models ---")
